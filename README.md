@@ -44,9 +44,11 @@ npm install md-uikit
 
 # MDUIkit on CDNJS:
 
-`<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/md-uikit@1.1.20/dist/css/md-uikit.css" />`
+`<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/css/uikit.min.css" />`
+`<link href="https://cdn.jsdelivr.net/npm/md-uikit@1.4.3/dist/css/md-uikit.css" rel="stylesheet">`
 
-`<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/md-uikit@1.1.20/dist/assets/js/md-uikit.js"></script>`
+`<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js"></script>`
+`<script src="https://cdn.jsdelivr.net/npm/md-uikit@1.4.3/dist/js/md-uikit.js" ></script>`
 
 # Documentation
 

@@ -1,11 +1,11 @@
 {
 	"name": "md-uikit",
-	"version": "1.1.30",
+	"version": "1.4.3",
 	"style": "dist/css/md-uikit.css",
 	"main": "dist/js/md-uikit.js",
 	"dependencies": {
-	    "uikit": "3.2.6",
-	    "node-waves": "0.7.6"
+	    "uikit": "3.5.7",
+	    "@material/ripple": "7.0.0"
 	},
 	"author" : {
 		"name" : "Jean Vera",
