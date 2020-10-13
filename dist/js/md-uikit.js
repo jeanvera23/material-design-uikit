@@ -1,65 +1,18 @@
 /*
 *  Material Design UIKit
 *  author: JEANVERA
-*  Version: MDUIkit 1.1.30
+*  Version: MDUIkit 1.5.1
 *
 * */
 
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-<<<<<<< HEAD
-        typeof define === 'function' && define.amd ? define(factory) :
-            (global.MDUIkit = factory());
-=======
     typeof define === 'function' && define.amd ? define(factory) :
     (global.MDUIkit = factory());
->>>>>>> 61b8dee... 1.4.3
 }(this, (function () {
     'use strict';
 
     var MDUIkit = MDUIkit || {};
-<<<<<<< HEAD
-    var UIkit = require('uikit');
-    var Waves = require('node-waves');
-    function lsTest() {
-        var test = 'test';
-        try {
-            localStorage.setItem(test, test);
-            localStorage.removeItem(test);
-            return true;
-        } catch (e) {
-            return false;
-        }
-    }
-    function isTouchDevice() {
-        return 'ontouchstart' in document.documentElement;
-    }
-    function nextElementSibling(element) {
-        do {
-            element = element.nextSibling;
-        } while (element && element.nodeType !== 1);
-        return element;
-    }
-    /* Calculate Scrollbar Width (http://chris-spittles.co.uk/jquery-calculate-scrollbar-width/) */
-    function scrollbarWidth() {
-        var a = document.createElement('div');
-        a.style.cssText = 'width: 100%; height:200px';
-        var b = document.createElement('div');
-        b.style.cssText = 'width:200px;height:150px; position: absolute; top: 0; left: 0; visibility: hidden; overflow:hidden;';
-        b.appendChild(a);
-        var c = a;
-        a = b;
-        document.body.appendChild(a);
-        c = c.offsetWidth;
-        b.style.overflow = "scroll";
-        a = a.clientWidth;
-        b.remove();
-        return c - a;
-    };
-
-    var $html = document.querySelector('html');
-    var $topBar = document.querySelector('#top_bar');
-=======
     var rUIkit,MDCRipple;
 
 
@@ -138,7 +91,6 @@ function scrollbarWidth() {
 
 var $html = document.querySelector('html');
 var $topBar = document.querySelector('#top_bar');
->>>>>>> 61b8dee... 1.4.3
     // 3.5 main sidebar (left)
     var MDUIkit_main_sidebar = {
         init: function () {
@@ -151,11 +103,7 @@ var $topBar = document.querySelector('#top_bar');
                 window.addEventListener('resize', function (e) {
                     e.preventDefault();
                     if (document.documentElement.clientWidth >= 1220) {
-<<<<<<< HEAD
-                        UIkit.offcanvas('#md-drawer').hide();
-=======
                         rUIkit.offcanvas('#md-drawer').hide();
->>>>>>> 61b8dee... 1.4.3
                         if (document.body.classList.contains("md-drawer_open")) {
                             md_drawer.classList.add('fullscreen');
                         }
@@ -166,10 +114,6 @@ var $topBar = document.querySelector('#top_bar');
                     }
                 });
             }
-<<<<<<< HEAD
-
-=======
->>>>>>> 61b8dee... 1.4.3
             if (md_drawer) {
                 var md_drawer_toggle = document.querySelector('#md-drawer-toggle');
                 md_drawer_toggle.addEventListener("click", function (e) {
@@ -184,11 +128,7 @@ var $topBar = document.querySelector('#top_bar');
                         }
                     }
                     else {
-<<<<<<< HEAD
-                        UIkit.offcanvas('#md-drawer').show();
-=======
                         rUIkit.offcanvas('#md-drawer').show();
->>>>>>> 61b8dee... 1.4.3
                     }
                 });
                 // menu
@@ -200,6 +140,8 @@ var $topBar = document.querySelector('#top_bar');
             var md_drawer = document.querySelector('#md-drawer');
             md_drawer.addEventListener("click", function (event) {
                 var uk_active = md_drawer.querySelector('.uk-active');
+                console.log("uk_active");
+                console.log(uk_active);
                 var target = event.target.closest('LI');
                 var isMenu = true;
                 if (target) {
@@ -211,16 +153,14 @@ var $topBar = document.querySelector('#top_bar');
                     }
                     if (isMenu) {
                         if (!(target.classList.contains('uk-parent'))) {
-                            if (uk_active.classList.contains('uk-active')) {
+                            if(uk_active != null){
+                                if (uk_active.classList.contains('uk-active')) {
+                                    uk_active.classList.remove('uk-active');
+                                }
                                 uk_active.classList.remove('uk-active');
                             }
-                            uk_active.classList.remove('uk-active');
                             target.classList.add('uk-active');
-<<<<<<< HEAD
-                            UIkit.offcanvas('#md-drawer').hide();
-=======
                             rUIkit.offcanvas('#md-drawer').hide();
->>>>>>> 61b8dee... 1.4.3
                         }
                     }
                 }
@@ -228,21 +168,12 @@ var $topBar = document.querySelector('#top_bar');
 
             var act_item = md_drawer.querySelectorAll('.uk-active');
             act_item
-<<<<<<< HEAD
-                .forEach(element => {
-                    let uk_parent = element.closest('.uk-parent')
-                    if (uk_parent) {
-                        uk_parent.classList.add('uk-open');
-                    }
-                });
-=======
             .forEach(element => {
                 let uk_parent = element.closest('.uk-parent')
                 if (uk_parent) {
                     uk_parent.classList.add('uk-open');
                 }
             });
->>>>>>> 61b8dee... 1.4.3
         }
     };
     // top bar
@@ -268,20 +199,12 @@ var $topBar = document.querySelector('#top_bar');
                 })();
                 sheet.insertRule(".uk-notification-top-left,.uk-notification-top-center,.uk-notification-top-right {top: 55px;}", 0);
                 sheet.insertRule(`@media (max-width: 639px) {
-<<<<<<< HEAD
-                .uk-notification-bottom-left,
-                .uk-notification-bottom-center,
-                .uk-notification-bottom-right {
-                  bottom: 64px;
-                }
-=======
                     .uk-notification-bottom-left,
                     .uk-notification-bottom-center,
                     .uk-notification-bottom-right {
-                      bottom: 64px;
-                  }
->>>>>>> 61b8dee... 1.4.3
-              }`, 0);
+                        bottom: 64px;
+                    }
+                }`, 0);
             }
         }
     };
@@ -296,12 +219,8 @@ var $topBar = document.querySelector('#top_bar');
             MDUIkit_core.fab_speed_dial();
             MDUIkit_core.fab_toolbar();
             MDUIkit_core.fab_sheet();
-<<<<<<< HEAD
-            MDUIkit_core.wave_effect();
-=======
             if(MDCRipple){ MDUIkit_core.material_ripple(); }
             
->>>>>>> 61b8dee... 1.4.3
         },
         clean_uikit: function (parent) {
             document.addEventListener('click', function (e) {
@@ -359,16 +278,6 @@ var $topBar = document.querySelector('#top_bar');
                     document.head.appendChild(style);
                     return style.sheet;
                 })();
-<<<<<<< HEAD
-                sheet.insertRule("main {padding-bottom: 87px;}", 0);
-                sheet.insertRule(".uk-notification-bottom-left,.uk-notification-bottom-center,.uk-notification-bottom-right {bottom: 64px;}", 0);
-                sheet.insertRule(`@media (max-width: 639px) {
-                .uk-notification-bottom-left,
-                .uk-notification-bottom-center,
-                .uk-notification-bottom-right {
-                  bottom: 64px;
-                }
-=======
                 sheet.insertRule("#admin-main {padding-bottom: 87px;}", 0);
                 sheet.insertRule(".uk-notification-bottom-left,.uk-notification-bottom-center,.uk-notification-bottom-right {bottom: 64px;}", 0);
                 sheet.insertRule(`@media (max-width: 639px) {
@@ -377,13 +286,18 @@ var $topBar = document.querySelector('#top_bar');
                     .uk-notification-bottom-right {
                       bottom: 64px;
                   }
->>>>>>> 61b8dee... 1.4.3
               }`, 0);
             }
         },
         inputs: function (parent) {
             var $mdInput = (typeof parent === 'undefined') ? document.querySelectorAll('.md-input') : parent.find('.md-input');
             $mdInput.forEach(element => {
+                
+                if (element.value !== '') {
+                    let md_input_wrapper = element.closest('.md-input-wrapper');
+                    md_input_wrapper ? md_input_wrapper.classList.add('md-input-filled') : console.log("No md_input_wrapper");
+                } 
+
                 element.addEventListener("focus", function (event) {
                     (element.closest('.md-input-wrapper')) ? element.closest('.md-input-wrapper').classList.add('md-input-focus') : console.log();
                 }, true);
@@ -480,19 +394,11 @@ var $topBar = document.querySelector('#top_bar');
                 })();
                 sheet.insertRule(".uk-notification-bottom-right {bottom: 87px;}", 0);
                 sheet.insertRule(`@media (max-width: 639px) {
-<<<<<<< HEAD
-                .uk-notification-bottom-left,
-                .uk-notification-bottom-center,
-                .uk-notification-bottom-right {
-                  bottom: 87px;
-                }
-=======
                     .uk-notification-bottom-left,
                     .uk-notification-bottom-center,
                     .uk-notification-bottom-right {
                       bottom: 87px;
                   }
->>>>>>> 61b8dee... 1.4.3
               }`, 0);
             }
             var $fab = document.querySelectorAll('.md-fab-speed-dial,.md-fab-speed-dial-horizontal');
@@ -547,11 +453,7 @@ var $topBar = document.querySelector('#top_bar');
                     var toolbarItems = $fab_toolbar.children[1].children.length;
                     $fab_toolbar.classList.add('md-fab-animated');
                     var FAB_padding = !$fab_toolbar.classList.contains('md-fab-small') ? 16 : 24,
-<<<<<<< HEAD
-                        FAB_size = !$fab_toolbar.classList.contains('md-fab-small') ? 64 : 44;
-=======
                     FAB_size = !$fab_toolbar.classList.contains('md-fab-small') ? 64 : 44;
->>>>>>> 61b8dee... 1.4.3
                     setTimeout(function () {
                         $fab_toolbar.style.width = (toolbarItems * FAB_size + FAB_padding)
                     }, 140);
@@ -572,11 +474,7 @@ var $topBar = document.querySelector('#top_bar');
                             }
                         }
                     })
-<<<<<<< HEAD
-                );
-=======
                     );
->>>>>>> 61b8dee... 1.4.3
             }
         },
         fab_sheet: function () {
@@ -611,26 +509,6 @@ var $topBar = document.querySelector('#top_bar');
                             }
                         }
                     })
-<<<<<<< HEAD
-                );
-            }
-        },
-        wave_effect: function () {
-            if (!$html.classList.contains('lte-ie9')) {
-                Waves.attach('.md-btn-wave,.md-fab-wave', ['waves-button']);
-                Waves.attach('.md-btn-wave-light,.md-fab-wave-light', ['waves-button', 'waves-light']);
-                Waves.attach('.wave-float', ['waves-float']);
-                Waves.attach('.wave-flat', ['waves-block']);
-                Waves.attach('.wave-circle', ['waves-circle']);
-                Waves.attach('.md-ripple');
-                Waves.init({
-                    delay: 5000
-                });
-            }
-        }
-    };
-    MDUIkit.init = function () {
-=======
                     );
             }
         },
@@ -646,12 +524,10 @@ var $topBar = document.querySelector('#top_bar');
         for (const button of mdIcons) {
             let rippleIcon = MDCRipple.MDCRipple.attachTo(button);
             rippleIcon.unbounded = true;
-            console.log(rippleIcon);
         }
     }
 };
 MDUIkit.init = function () {
->>>>>>> 61b8dee... 1.4.3
         // main sidebar
         MDUIkit_main_sidebar.init();
 

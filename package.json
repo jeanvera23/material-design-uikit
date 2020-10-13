@@ -1,10 +1,10 @@
 {
 	"name": "md-uikit",
-	"version": "1.4.3",
+	"version": "1.5.1",
 	"style": "dist/css/md-uikit.css",
 	"main": "dist/js/md-uikit.js",
 	"dependencies": {
-	    "uikit": "3.5.7",
+	    "uikit": "3.5.8",
 	    "@material/ripple": "7.0.0"
 	},
 	"author" : {
